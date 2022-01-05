@@ -14,8 +14,22 @@ foreach ($user_data as $mcq) {
 	echo "<br />";
 	// echo "Options: ".$mcq->incorrect_answers;
 	// echo "<br /> <br />";
+		?>
 
-	}
-?>
+		<select>
+
+		<?  
+		$option_answer = $mcq->incorrect_answers;
+		print_r($option_answer);
+		foreach($option_answer as $key => $value){?>
+
+        <option value="<? echo $key; ?>">
+        	<? echo $value; ?>
+        		
+        	</option>
+
+    <?  }   ?>
+</select>
+	<?php } ?>
 
 </html>
