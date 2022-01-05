@@ -20,7 +20,7 @@ foreach ($user_data as $mcq) {
 		<?  
 		$answer = $response_data->incorrect_answers;
 	
-		print_r($answer);
+		//print_r($answer);
 		foreach($answer as $key => $value){?>
 
         <option value="<? echo $key; ?>">
