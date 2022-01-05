@@ -19,7 +19,7 @@ foreach ($user_data as $mcq) {
 		<select>
  <option value="<? echo $key; ?>">
         	<?php 
-		$json_correct = $mcq['correct_answers'];
+		$json_correct = $mcq['correct_answer'];
 		$json_incorrect = $mcq['incorrect_answers'];
 
 		//print_r ($mcq);
