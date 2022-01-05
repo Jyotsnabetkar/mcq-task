@@ -19,17 +19,17 @@ foreach ($user_data as $mcq) {
 		<select>
  <option value="<? echo $key; ?>">
         	<?php 
-		$json_correct = $mcq->correct_answers;
-		$json_incorrect = $mcq->incorrect_answers;
+		$json_correct = $mcq['correct_answers'];
+		$json_incorrect = $mcq['incorrect_answers'];
 
-		print_r ($json_correct);
+		//print_r ($mcq);
 		// decode json to array
-//$array[] = json_decode($json_correct, true);
-//$array[] = json_decode($json_incorrect, true);
+$array[] = json_decode($json_correct, true);
+$array[] = json_decode($json_incorrect, true);
 
 // encode array to json
-//$result = json_encode($array, JSON_PRETTY_PRINT);
-	//echo $result;		//var_dump($result);
+$result = json_encode($array, JSON_PRETTY_PRINT);
+	echo $result;		//var_dump($result);
 		?>
         		
         	</option>
