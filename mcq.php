@@ -12,16 +12,16 @@ $json_data = file_get_contents("https://opentdb.com/api.php?amount=10");
 foreach ($user_data as $mcq) {
 	echo "Question: ".$mcq->question;
 	echo "<br />";
-	// echo "Options: ".$mcq->incorrect_answers;
-	// echo "<br /> <br />";
+	
 		?>
 
 		<select>
 
 		<?  
-		$option_answer = $mcq->incorrect_answers;
-		print_r($option_answer);
-		foreach($option_answer as $key => $value){?>
+		$answer = $response_data->incorrect_answers;
+	
+		print_r($answer);
+		foreach($answer as $key => $value){?>
 
         <option value="<? echo $key; ?>">
         	<? echo $value; ?>
