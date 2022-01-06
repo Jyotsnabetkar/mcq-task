@@ -10,17 +10,16 @@ $json_data = file_get_contents("https://opentdb.com/api.php?amount=10");
 
 //print_r($user_data);
 //Traverse array and display user data
-foreach ($user_data as $mcq) {
-	echo "Question:".$mcq->question."<br/>";
+ foreach ($user_data as $mcq) {
+	echo "Question:".$mcq->question;
 	echo "<br />";
 	
 		?>
-
 		<select>
 			<option selected="selected">Choose one</option>
-			<option>
+			
         	<?php 
-        		  $response_data = json_decode($json_data);
+        		 $response_data = json_decode($json_data);
 				$user_data = $response_data->results;
 				$jsonobjnew = $mcq->correct_answer;
 				$jsonobj = $mcq->incorrect_answers;
@@ -28,13 +27,13 @@ foreach ($user_data as $mcq) {
 				//print_r($jsonobj);
   				foreach($jsonobj as $item){
             		echo "<option value='strtolower($item)'>$item</option>";
-        			}
-					
+        			}				
 		
         	?>
-        	</option>
+        	
 
-		</select>
+		</select><br/><br/>
+
 	<?php } ?>
 
 </html>
