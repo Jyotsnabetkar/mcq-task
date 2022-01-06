@@ -17,17 +17,19 @@ foreach ($user_data as $mcq) {
 		?>
 
 		<select>
-			
+			<option selected="selected">Choose one</option>
 			<option>
         	<?php 
-        		$bucket = array();
-  
-        		$response_data = json_decode($json_data);
+        		  $response_data = json_decode($json_data);
 				$user_data = $response_data->results;
 				$jsonobjnew = $mcq->correct_answer;
 				$jsonobj = $mcq->incorrect_answers;
 				array_push($jsonobj, $jsonobjnew);
-				print_r($jsonobj);
+				//print_r($jsonobj);
+  				foreach($jsonobj as $item){
+            		echo "<option value='strtolower($item)'>$item</option>";
+        			}
+					
 		
         	?>
         	</option>
