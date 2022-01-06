@@ -19,11 +19,18 @@ foreach ($user_data as $mcq) {
 		<select>
  <option value="<? echo $key; ?>">
         	<?php 
-		//$json_correct = $mcq->correct_answer[1];
-		//$json_incorrect = $mcq->incorrect_answers[];
-		//echo $mcq['results']['category'];							
-        	foreach ($user_data as $correct_answers) {
-	echo $correct_answers->correct_answer."<br/>".PHP_EOL;
+
+		//echo $mcq['results']['category'];	
+				//$array[] = json_decode($response_data['correct_answer'], true);
+        		//$array[] = json_decode($response_data['incorrect_answers'], true);
+    //     		$data1 = json_encode(array['incorrect_answers'=>'5']); 
+				// $data2 = json_encode(array['correct_answer'=>'4']); 
+				// $results = json_encode(array_merge(json_decode($data1, true),json_decode($data2, true)));
+				// echo $results;
+        	foreach ($user_data as $array) {
+        				
+        		$result = json_encode($array, JSON_PRETTY_PRINT);
+				echo $result."<br/>".PHP_EOL;
 		}
 																			// foreach ($mcq['results'] as $correct_answer) {
 																			// 	echo $correct_answer['correct_answer']."<br>";
